@@ -35,3 +35,37 @@ type UserType = {
 let betterFunction = (user: UserType) => {
   user.theme = "light";
 };
+
+// interface
+
+interface IUser {
+  username: string;
+  email: string;
+}
+
+interface IEmployee extends IUser {
+  employId: Number;
+}
+
+let testme = (user: IUser) => {
+  user.email = "majumder@gmail.com";
+};
+
+let testme2 = (employ: IEmployee) => {
+  employ.employId = 2;
+};
+
+// Generics
+interface IAuthor {
+  id: number;
+  username: string;
+}
+
+interface IPost {
+  id: number;
+  extra: IAuthor[];
+}
+
+interface IPost1<T> {
+  extra: T[];
+}
